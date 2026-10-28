@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {View, Text} from 'react-native';
+import {FontAwesome6} from "expo@/vector-icons";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+// Ex1: User-defined component Movie with properties title and year
+const Movie = ({title, year, icon_name, icon_color}) => {
+    return (
+        <View>
+            <Text></Text>
+            <Text>
+                Movie:
+                <FontAwesome6 name={icon_name} size={40} color={icon_color} />
+                 {title} {year}
+            </Text>
+        </View>
+    );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// export default Movie;
+ class AllMovies extends React.Component {
+     render() {
+         return(
+             <View>
+                 <Movie title={"Doctor Sleep"} year={2019} icon_name={"skull"} icon_color={"grey"} />
+             </View>
+         );
+     };
+ };
